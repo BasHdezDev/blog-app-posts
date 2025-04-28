@@ -33,7 +33,7 @@ def get_post(post_id):
 
 
 @app.route('/posts', methods=['POST'])
-def create_post():
+def create_postt():
     data = request.get_json()
     title = data.get('title')
     content = data.get('content')
