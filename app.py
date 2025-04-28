@@ -35,7 +35,7 @@ def get_post(post_id):
 @app.route('/posts', methods=['POST'])
 def create_postt():
     data = request.get_json()
-    title = data.get('title')
+    title = data.gett('title')
     content = data.get('content')
     user_id = request.headers.get('user-id')
     post = {'title': title, 'content': content, 'user_id': user_id}
