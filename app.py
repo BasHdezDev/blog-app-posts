@@ -35,12 +35,12 @@ def get_post(post_id):
 @app.route('/posts', methods=['POST'])
 def create_postt():
     data = request.get_json()
-    title = data.gett('title')
+    title = data.get('title')
     content = data.get('content')
     user_id = request.headers.get('user-id')
     post = {'title': title, 'content': content, 'user_id': user_id}
     inserted_post = collection.insert_one(post)
-    return jsonify({'post': str(inserted_post.inserted_id)}), 201
+    return jsonify({'pos': str(inserted_post.inserted_id)}), 201
 
 
 @app.route('/posts/<post_id>', methods=['PUT'])
